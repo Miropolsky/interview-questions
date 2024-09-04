@@ -7,28 +7,30 @@ const MainMenu: React.FC = () => {
             <h1>Выберите категорию вопросов</h1>
             <ul>
                 <li>
-                    <Link href='/all'>Все вопросы</Link>
+                    <Link href='/allQuestion'>Все вопросы</Link>
                 </li>
                 <li>
-                    <Link href='/frontend'>Frontend</Link>
+                    <Link href='/frontendQuestion'>Frontend</Link>
                 </li>
                 <li>
-                    <Link href='/backend'>Backend</Link>
+                    <Link href='/backendQuestion'>Backend</Link>
                 </li>
                 <li>
-                    <Link href='/behavioral'>Поведенческое интервью</Link>
+                    <Link href='/behavioralQuestion'>
+                        Поведенческое интервью
+                    </Link>
                 </li>
                 <li>
-                    <Link href='/react'>React</Link>
+                    <Link href='/reactQuestion'>React</Link>
                 </li>
                 <li>
-                    <Link href='/js'>JavaScript</Link>
+                    <Link href='/jsQuestion'>JavaScript</Link>
                 </li>
                 <li>
-                    <Link href='/htmlcss'>HTML/CSS</Link>
+                    <Link href='/htmlcssQuestion'>HTML/CSS</Link>
                 </li>
                 <li>
-                    <Link href='/technology'>Технологии</Link>
+                    <Link href='/technologyQuestion'>Технологии</Link>
                 </li>
             </ul>
         </nav>

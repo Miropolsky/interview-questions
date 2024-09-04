@@ -1,4 +1,4 @@
-import { apiQuestion } from "@/src/pages/api/apiQuestion";
+import { apiQuestion } from "@/pages/api/apiQuestion";
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Question {
