@@ -4,7 +4,7 @@ export default function BehavioralQuestions() {
     return (
         <QuestionCategory
             title='Поведенческое интервью'
-            filterCategory='behavioral'
+            category='behavioral'
         />
     );
 }

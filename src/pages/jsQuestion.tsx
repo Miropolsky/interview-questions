@@ -1,5 +1,5 @@
 import QuestionCategory from '../components/QuestionCategory';
 
 export default function JavaScriptQuestions() {
-    return <QuestionCategory title='JavaScript вопросы' filterCategory='js' />;
+    return <QuestionCategory title='JavaScript вопросы' category='js' />;
 }

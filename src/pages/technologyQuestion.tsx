@@ -4,7 +4,7 @@ export default function TechnologyQuestions() {
     return (
         <QuestionCategory
             title='Вопросы по технологиям'
-            filterCategory='technology'
+            category='technology'
         />
     );
 }
