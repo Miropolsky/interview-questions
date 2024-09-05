@@ -21,9 +21,9 @@ const MainMenu: React.FC = () => {
                     </Link>
                 </li>
                 {/* <li>
-                    <Link href='/backendQuestion'>
+                    <Link href='/generalQuestion'>
                         <div className="bg-red-500 text-white p-6 rounded-lg shadow-md hover:bg-red-600 transition duration-300 cursor-pointer text-center">
-                            Backend
+                            Общие
                         </div>
                     </Link>
                 </li> */}

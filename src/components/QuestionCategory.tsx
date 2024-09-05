@@ -37,7 +37,7 @@ const QuestionCategory: React.FC<QuestionCategoryProps> = ({ title, category }) 
 
     if (loading) return <div className="text-center text-lg font-semibold">Загрузка вопросов...</div>;
     if (error) return <div className="text-center text-red-500">Ошибка: {error}</div>;
-    if (list.length === 0) return <div className="text-center text-lg">Нет вопросов в этой категории.</div>;
+    if (list && list.length === 0) return <div className="text-center text-lg">Нет вопросов в этой категории.</div>;
 
     if (testCompleted) {
         return (
