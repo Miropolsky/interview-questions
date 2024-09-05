@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import { Provider } from 'react-redux';
 import { store } from '@/store/store';
+import './global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (

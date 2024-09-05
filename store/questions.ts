@@ -3,31 +3,28 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Question {
     question: string;
-    answer?: string;
     options?: string[];
-    correctOption?: number | null;
-    category: string;
+    answer?: string;
+    correctOption?: number;
+    category: string[];
 }
+
 
 interface QuestionsState {
     list: Question[];
-    currentCategory: string | null;
     currentQuestionIndex: number;
-    correctAnswers: number;
     loading: boolean;
     error: string | null;
 }
 
 const initialState: QuestionsState = {
     list: [],
-    currentCategory: null,
     currentQuestionIndex: 0,
-    correctAnswers: 0,
     loading: false,
-    error: null,
+    error: null
 };
 
-export const getQuestion = createAsyncThunk('getQuestion', async (category: string | null) => {
+export const getQuestion = createAsyncThunk('getQuestion', async (category: string) => {
     const res = await apiQuestion.getQuestion(category)
     return res.data as Question[]
 })
@@ -36,20 +33,17 @@ const questionsSlice = createSlice({
     name: 'questions',
     initialState,
     reducers: {
-        setCategory(state, action: PayloadAction<string | null>) {
-            state.currentCategory = action.payload;
+        setCategory(state) {
             state.currentQuestionIndex = 0;
         },
         nextQuestion(state) {
             state.currentQuestionIndex += 1;
         },
-        incrementCorrectAnswers(state) {
-            state.correctAnswers += 1;
-        },
-        reset(state) {
-            state.currentQuestionIndex = 0;
-            state.correctAnswers = 0;
-        },
+        previousQuestion(state) {
+            if (state.currentQuestionIndex > 0) {
+                state.currentQuestionIndex -= 1;
+            }
+        }
     },
     extraReducers: (builder) => {
         builder
@@ -60,10 +54,11 @@ const questionsSlice = createSlice({
             .addCase(getQuestion.fulfilled, (state, action: PayloadAction<Question[]>) => {
                 state.loading = false;
                 state.list = action.payload;
+                state.currentQuestionIndex = 0;
             })
             .addCase(getQuestion.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.payload as string;
+                state.error = action.error.message || 'Неизвестная ошибка';
             });
     },
 });
@@ -71,7 +66,6 @@ const questionsSlice = createSlice({
 export const {
     setCategory,
     nextQuestion,
-    incrementCorrectAnswers,
-    reset,
+    
 } = questionsSlice.actions;
 export default questionsSlice.reducer

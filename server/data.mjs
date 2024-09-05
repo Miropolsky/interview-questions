@@ -7,7 +7,7 @@ export const questions = [
             "Способ декларации переменных"
         ],
         correctOption: 0,
-        category: "js"
+        categories: ["js", "all"]
     },
     {
         question: "Чем отличается React от Angular?",
@@ -17,7 +17,7 @@ export const questions = [
             "Они одинаковы"
         ],
         correctOption: 0,
-        category: "react"
+        categories: ["react", "all"]
     },
     {
         question: "Что такое Flexbox?",
@@ -27,7 +27,7 @@ export const questions = [
             "Фреймворк для разработки UI"
         ],
         correctOption: 0,
-        category: "htmlcss"
+        categories: ["htmlcss", "all"]
     },
     {
         question: "Что такое Docker?",
@@ -37,21 +37,21 @@ export const questions = [
             "Язык программирования"
         ],
         correctOption: 1,
-        category: "technology"
+        categories: ["technology", "all"]
     },
     {
         question: "Расскажите о паттерне Singleton.",
         answer: "Паттерн Singleton гарантирует, что у класса есть только один экземпляр, и предоставляет глобальную точку доступа к этому экземпляру.",
-        category: "backend"
+        categories: ["backend", "all"]
     },
     {
         question: "Расскажите о своем последнем проекте.",
         answer: "Ответ зависит от опыта кандидата.",
-        category: "behavioral"
+        categories: ["behavioral", "all"]
     },
     {
         question: "Что такое REST API?",
         answer: "REST API — это архитектурный стиль, который определяет набор ограничений для создания веб-сервисов.",
-        category: "all"
+        categories: ["all"]
     }
 ];

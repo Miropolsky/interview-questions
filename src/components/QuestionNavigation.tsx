@@ -1,13 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { nextQuestion } from '@/store/questions';
-import { useStoreDispatch } from '@/store/store';
 
-const QuestionNavigation: React.FC = () => {
-    const dispatch = useStoreDispatch();
+interface QuestionNavigationProps {
+    onNext: () => void;
+}
 
+const QuestionNavigation: React.FC<QuestionNavigationProps> = ({ onNext }) => {
     return (
-        <button onClick={() => dispatch(nextQuestion())}>
+        <button
+            onClick={onNext}
+            className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
+        >
             Следующий вопрос
         </button>
     );
