@@ -107,12 +107,12 @@ const CurrentQuestion: React.FC<IProps> = ({ question, onNext, isLastQuestion, c
                                     Ответ неверный
                                 </button>
                                 {/* Добавляем кнопку для озвучки */}
-                                <button
+                               {/* <button
                                     onClick={() => speakAnswer(question.answer || '')}
                                     className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-md"
                                 >
                                     Озвучить ответ
-                                </button>
+                    </button> */}
                             </div>
                         </div>
                     )}
