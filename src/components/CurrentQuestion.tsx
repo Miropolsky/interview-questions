@@ -39,7 +39,7 @@ const CurrentQuestion: React.FC<IProps> = ({ question, onNext, isLastQuestion, c
     };
 
     const handleShowAnswer = () => {
-        setShowAnswer(true);
+        setShowAnswer(prev => !prev);
     };
 
     const handleAnswerCheck = (isCorrect: boolean) => {
@@ -47,6 +47,13 @@ const CurrentQuestion: React.FC<IProps> = ({ question, onNext, isLastQuestion, c
             setCorrectAnswersCount(correctAnswersCount + 1);
         }
         onNext(); // Переход к следующему вопросу
+    };
+
+    // Функция для озвучивания текста
+    const speakAnswer = (text: string) => {
+        const speech = new SpeechSynthesisUtterance(text);
+        speech.lang = 'ru-RU'; // Можно изменить на другой язык, если требуется
+        window.speechSynthesis.speak(speech);
     };
 
     return (
@@ -98,6 +105,13 @@ const CurrentQuestion: React.FC<IProps> = ({ question, onNext, isLastQuestion, c
                                     className="px-4 py-2 bg-red-500 text-white rounded-md"
                                 >
                                     Ответ неверный
+                                </button>
+                                {/* Добавляем кнопку для озвучки */}
+                                <button
+                                    onClick={() => speakAnswer(question.answer || '')}
+                                    className="mt-4 px-4 py-2 bg-purple-500 text-white rounded-md"
+                                >
+                                    Озвучить ответ
                                 </button>
                             </div>
                         </div>
