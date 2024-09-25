@@ -14,19 +14,19 @@ const MainMenu: React.FC = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link href='/frontendQuestion'>
+                    <Link href='/platina1'>
                         <div className="bg-green-500 text-white p-6 rounded-lg shadow-md hover:bg-green-600 transition duration-300 cursor-pointer text-center">
-                            Frontend
+                            Платина 1
                         </div>
                     </Link>
                 </li>
-                {/* <li>
-                    <Link href='/generalQuestion'>
+                <li>
+                    <Link href='/platina2'>
                         <div className="bg-red-500 text-white p-6 rounded-lg shadow-md hover:bg-red-600 transition duration-300 cursor-pointer text-center">
-                            Общие
+                            Платина 2
                         </div>
                     </Link>
-                </li> */}
+                </li>
                 <li>
                     <Link href='/behavioralQuestion'>
                         <div className="bg-yellow-500 text-white p-6 rounded-lg shadow-md hover:bg-yellow-600 transition duration-300 cursor-pointer text-center">
